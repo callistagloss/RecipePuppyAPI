@@ -1,0 +1,98 @@
+﻿h3 {
+    font-size: 20px;
+}
+
+.hiddenElement {
+    display: none;
+}
+
+.recipeImage {
+    width: 100px;
+    height: auto;
+}
+
+.flexButton {
+    border-radius: 3px;
+    background-color: white;
+}
+
+@keyframes greenify {
+    0% {
+        background-color: rgba(5, 190, 47, 0.0);
+    }
+    100% {
+        background-color: rgba(5, 190, 47, 0.75);
+    }
+}
+@keyframes redify {
+    0% {
+        background-color: rgba(167, 0, 0, 0.0);
+    }
+
+    100% {
+        background-color: rgba(167, 0, 0, 0.70);
+    }
+}
+
+.fav:hover {
+    animation: greenify;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+
+.del:hover {
+    animation: redify;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.flex {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.box {
+    height: auto;
+    margin:10px 0px 10px 0px;
+    box-shadow: 5px 5px 5px gray;
+    width: 90%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.sucess {
+    color: green;
+}
+
+#user {
+    margin-top: 6px;
+    margin-left: 100px;
+    color: white;
+}
+
+
+/*-------------------divs within flexbox-----------------*/
+.image {
+    width: 20%;
+}
+
+.favorite {
+    width: 20%;
+    text-align: right;
+}
+
+.ingredients {
+    width: 25%;
+    text-align: center;
+}
+
+.title {
+    width: 25%;
+}

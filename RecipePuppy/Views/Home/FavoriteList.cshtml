@@ -1,0 +1,40 @@
+﻿@model IEnumerable<RecipePuppy.Models.Favorite>
+@using RecipePuppy.Models
+@{ 
+    List<Favorite> favorites = Model.ToList();
+    if (Model.ToList().Count > 0)
+    {
+        <h2>FavoriteList</h2>
+        <p class="sucess">@Session["Success"]</p>
+    <div class="flexContainer">
+        @for (int i = 0; i < favorites.Count; i++)
+         {
+             string box = "box" + i.ToString();
+             <div class="box" id="@box">
+                <div class="flex image">
+                    <img src="@favorites[i].Thumbnail" class="recipeImage" />
+                </div>
+                <div class="flex title">
+                    <a href="@favorites[i].Image"><h3>@Html.DisplayFor(modelItem => favorites[i].Title)</h3></a>
+                </div>
+                <div class="flex ingredients">
+                    @Html.DisplayFor(modelItem => favorites[i].Ingredients)
+                </div>
+                <div class="flex favorite">
+                    <form action="~/Home/DeleteFav">
+                        <input name="id" value="@favorites[i].Id" class="hiddenElement" />
+                        <input type="submit" class="flexButton del" value="Delete" />
+                    </form>
+                </div>
+
+             </div>
+         }
+    </div>
+    }
+    else
+    {
+        <br />
+        <h1>You don't have any favorites yet!</h1> 
+        <a href="~/Home/Ingredients">Add Favorite Recipes</a>
+    }
+}

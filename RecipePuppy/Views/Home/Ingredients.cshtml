@@ -1,0 +1,88 @@
+﻿<div class="container-fluid">
+    <!-- Control the column width, and how they should appear on different devices -->
+    <div class="row">
+        <div class="col-sm-6">
+            <br />
+            <h2>Search by Ingredients:</h2>
+            <form action="~/Home/RecipeList" method="post">
+                <br />
+                <div class="form-group">
+                    <input type="text" name="ing1"
+                           class="form-control" placeholder="First ingredient:" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ing2"
+                           class="form-control" placeholder="Second ingredient:" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ing3"
+                           class="form-control" placeholder="Third ingredient:" />
+                </div>
+                <h3>Select the # of Recipes to display: </h3>
+                <p>
+                    <label>
+                        <input name="num" value="1" type="radio" checked />
+                        <span>1 Recipe</span>
+                    </label>
+                    <label>
+                        <input name="num" value="5" type="radio" checked />
+                        <span>5 Recipes</span>
+                    </label>
+                    <label>
+                        <input name="num" value="10" type="radio" checked />
+                        <span>10 Recipes</span>
+                    </label>
+                </p>
+
+                <input type="submit" value="List Recipes" />
+            </form>
+
+        </div>
+        <div class="col-sm-6">
+            <br />
+            <h2>Search by Name of Dish:</h2>
+
+            <form action="~/Home/RecipeListTitle">
+                <br />
+                <div class="form-group">
+                    <input type="text" name="title"
+                           class="form-control" placeholder="Dish Name:" />
+                </div>
+
+                <br />
+                <input type="submit" value="List Recipes" />
+            </form>
+        </div>
+    </div>
+</div>
+<div class="float-sm-right">
+    <br />
+    <br />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ingredientModal">
+        Need a hint?
+    </button>
+</div>
+
+    <div class="modal fade" id="ingredientModal" tabindex="-1" role="dialog" aria-labelledby="ingredientModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ingredientModalLabel">Try these ingredients:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Apple<br />
+                        Eggs<br />
+                        Chicken<br />
+                    </p>
+                    <a href="https://www.healthline.com/nutrition/50-super-healthy-foods#section1" target="_blank">More Healthy Ingredients Suggestions!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<RecipePuppy.Models.Recipe>
+@using RecipePuppy.Models
+@{ 
+    List<Recipe> recipes = Model.ToList();
+
+    int num = 10;
+    if(Session["Number"] != null)
+    {
+        num = (int)Session["Number"];
+        if(num > recipes.Count)
+        {
+            num = recipes.Count;
+        }
+    }
+
+}
+<br />
+<h2>Recipes </h2>
+
+    <div class="flexContainer">
+        @for(int i = 0; i < num; i++)
+        {
+            
+        string box = "box" + i.ToString();
+
+        <div class="box" id="@box">
+            <div class="flex image">
+                <img src="@recipes[i].ThumbNail" class="recipeImage" />
+            </div>
+            <div class="flex title">
+                <a href="@recipes[i].Image"><h3>@Html.DisplayFor(modelItem => recipes[i].Title)</h3></a>
+            </div>
+            <div class="flex ingredients">
+                <p>Ingredients:</p>
+                <p>@Html.DisplayFor(modelItem => recipes[i].Ingredients)</p>
+            </div>
+            <div class="flex favorite">
+                <form action="~/Home/RecipeFavorite">
+                    <input name="title" value="@recipes[i].Title" class="hiddenElement" />
+                    <input name="image" value="@recipes[i].Image" class="hiddenElement" />
+                    <input name="ingredients" value="@recipes[i].Ingredients" class="hiddenElement" />
+                    <input name="thumbNail" value="@recipes[i].ThumbNail" class="hiddenElement" />
+                    <input type="submit" class="flexButton fav" value="Favorite &#10084" />
+                </form>
+            </div>
+
+        </div>
+        }
+    </div>
+
+
+

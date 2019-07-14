@@ -1,0 +1,162 @@
+@using RecipePuppy.Models
+@{
+    User u = (User)Session["User"];
+}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<body>
+
+    <br />
+    <h1>Welcome to Recipe App!</h1>
+    <p>You can search and save your favorite recipes. Our recipe API search engine finds meals by a list of ingredients or keywords! You can look through more than 500,000 recipes across dozens of websites!</p>
+    <br />
+    <br />
+    <!-- Grid row -->
+    <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+            <!--Modal: Name-->
+            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+
+                    <!--Content-->
+                    <div class="modal-content">
+
+                        <!--Body-->
+                        <div class="modal-body mb-0 p-0">
+
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bcH_cM1PFy8"
+                                        allowfullscreen></iframe>
+                            </div>
+
+                        </div>
+
+                        <!--Footer-->
+                        <div class="modal-footer justify-content-center">
+
+                            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+
+                        </div>
+
+                    </div>
+                    <!--/.Content-->
+
+                </div>
+            </div>
+            <!--Modal: Name-->
+
+            <a>
+                <img class="img-fluid z-depth-1" src="https://www.bakedbyanintrovert.com/wp-content/uploads/2017/01/Nutella-Cheesecake-Recipe-Pic.jpg" alt="video"
+                     data-toggle="modal" data-target="#modal1">
+            </a>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <!--Modal: Name-->
+            <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+
+                    <!--Content-->
+                    <div class="modal-content">
+
+                        <!--Body-->
+                        <div class="modal-body mb-0 p-0">
+
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gPrDGZxOE0k"
+                                        allowfullscreen></iframe>
+                            </div>
+
+                        </div>
+
+                        <!--Footer-->
+                        <div class="modal-footer justify-content-center">
+
+                            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+
+                        </div>
+
+                    </div>
+                    <!--/.Content-->
+
+                </div>
+            </div>
+            <!--Modal: Name-->
+
+            <a>
+                <img class="img-fluid z-depth-1" src="https://www.perfectoys.gr/uplds/115210_339643-2.JPG" alt="video"
+                     data-toggle="modal" data-target="#modal6">
+            </a>
+
+        </div>
+        <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+            <!--Modal: Name-->
+            <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+
+                    <!--Content-->
+                    <div class="modal-content">
+
+                        <!--Body-->
+                        <div class="modal-body mb-0 p-0">
+
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UYhKDweME3A"
+                                        allowfullscreen></iframe>
+                            </div>
+
+                        </div>
+
+                        <!--Footer-->
+                        <div class="modal-footer justify-content-center">
+
+                            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+
+                        </div>
+
+                    </div>
+                    <!--/.Content-->
+
+                </div>
+            </div>
+            <!--Modal: Name-->
+
+            <a>
+                <img class="img-fluid z-depth-1" src="https://kirbiecravings.com/wp-content/uploads/2018/09/2-ingredient-keto-pasta-5.jpg" alt="video"
+                     data-toggle="modal" data-target="#modal4">
+            </a>
+
+        </div>
+        <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+    <h2>Let's get started!</h2>
+    @{
+        if (u == null)
+        {
+
+
+            <p>Become our friends at Recipe App! To be able to search and save, please login or register below.</p>
+            <a href="@Url.Action("Login", "Home")" class="btn btn-primary btn-s mb-2">Login</a>
+            <a href="@Url.Action("Register", "Home")" class="btn btn-success btn-s mb-2">Register</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Ingredients", "Home")" class="btn btn-primary btn-s mb-2">Find Recipes!</a>
+        }
+
+    }
+</body>
+
+</html>
